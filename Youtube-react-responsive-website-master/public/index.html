@@ -1,0 +1,101 @@
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1"> 
+	<title> 
+		How To Create a Tab Image Gallery 
+	</title> 
+	<style> 
+		h1 { 
+			color: green; 
+		} 
+	
+		/* column pic */ 
+		.column { 
+			float: left; 
+			width: 25%; 
+			padding: 10px; 
+		} 
+	
+		/* Style the images of gallery */ 
+		.column img { 
+			opacity: 0.6; 
+			cursor: zoom-in; 
+			padding: 5px; 
+		} 
+		
+		.column img:hover { 
+			opacity: 1; 
+			transform: scale(1.1); 
+			transition: 0.5s; 
+		} 
+		
+		.column img:active { 
+			opacity: 1; 
+		} 
+	
+		* { 
+			box-sizing: border-box; 
+		} 
+		
+		/* Expanding image text */ 
+		#geeks { 
+			position: absolute; 
+			left: 200px; 
+			padding-top: 100px; 
+			font-size: 28px; 
+			color: #EFECE9; 
+		} 
+		
+		#geeks:hover { 
+			color: #ADE3BD; 
+			cursor: wait; 
+		} 
+	</style> 
+</head> 
+
+<body> 
+
+	<div style="text-align:center"> 
+		<h1>GeeksforGeeks</h1> 
+		<h4>A Computer Science Portal for Geeks</h4> 
+		<p>Tab Image Gallery</p> 
+	</div> 
+
+	<!-- gallery pic -->
+	<div class="row"> 
+		<div id="geeks">Here the Photo will be displayed</div> 
+
+		<div class="column"> 
+			<img src= 
+"https://media.geeksforgeeks.org/wp-content/uploads/20191129163105/geeksforgeeks_sale.png"
+				style="width:100%" onclick="gfg(this);"> 
+			<img src= 
+"https://media.geeksforgeeks.org/wp-content/uploads/20191128181646/perl-Tutorial.png"
+				style="width:100%" onclick="gfg(this);"> 
+			<img src= 
+"https://media.geeksforgeeks.org/wp-content/uploads/20191127161209/BF-TokenMail-min-min.png"
+				style="width:100%" onclick="gfg(this);"> 
+		</div> 
+
+		<div class="coloumn"> 
+			<span onclick="this.parentElement.style.display='none'"></span> 
+			<img id="expand" style="width:70%; 
+									height: 50%; 
+									margin-top: 15px;"> 
+		</div> 
+	</div> 
+	<script> 
+		function gfg(imgs) { 
+			var expandImg = document.getElementById("expand"); 
+			var imgText = document.getElementById("geeks"); 
+			expandImg.src = imgs.src; 
+			imgText.innerHTML = imgs.alt; 
+			expandImg.parentElement.style.display = "block"; 
+		} 
+	</script> 
+</body> 
+
+</html> 
